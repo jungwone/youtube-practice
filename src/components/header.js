@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./header.module.css";
 import Logo from "../images/logo.png";
 import Search from "../images/search.png";
 
 function Header(props) {
-  const [keyword, setKeyword] = useState("");
+  const { keyword, setKeyword, onSubmit } = props;
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log("search keyword : ", keyword);
-    setKeyword(""); // Reset keyword
-  };
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -33,7 +28,7 @@ function Header(props) {
               setKeyword(e.target.value);
             }}
           />
-          <button>
+          <button type="button">
             <img src={Search} alt="search" />
           </button>
         </form>
