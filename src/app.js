@@ -3,6 +3,7 @@ import Header from "./components/header";
 import VideoCardList from "./components/videoCardList";
 import axios from "axios";
 import "./app.css";
+import VideoList from "./components/video_list/video_list";
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -30,7 +31,8 @@ function App() {
   return (
     <>
       <Header keyword={keyword} setKeyword={setKeyword} onSubmit={onSubmit} />
-      <VideoCardList videos={videos} />
+      {/* <VideoCardList videos={videos} /> */}
+      <VideoList videos={videos} />
     </>
   );
 }
